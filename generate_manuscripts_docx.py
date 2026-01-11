@@ -173,6 +173,39 @@ add_para(doc1, "Code Availability: Analysis scripts (R, Python) are available at
 add_para(doc1, "Acknowledgements: We thank the open source community for bioinformatics tools (Seurat, Signac, clusterProfiler).")
 add_para(doc1, "Ethics: This study used publicly available, de-identified datasets. No additional ethical approval was required.")
 
+# Author Contributions (Required for Article)
+add_heading(doc1, "Author Contributions", 1)
+doc1.add_paragraph(
+    "S.H.S. conceived the study, developed the CPI methodology, performed all computational analyses, "
+    "interpreted the results, and wrote the manuscript. S.H.S. is the sole author and takes full responsibility for the work."
+)
+
+# Figure Legends
+add_heading(doc1, "Figure Legends", 1)
+doc1.add_paragraph()
+fig1_legend = doc1.add_paragraph()
+fig1_legend.add_run("Figure 1. Universal Epigenetic Priming Across Diseases. ").bold = True
+fig1_legend.add_run(
+    "(a) Schematic of the Chromatin Priming Index (CPI) concept: genes with open chromatin ('primed') are poised for rapid transcription. "
+    "(b) Boxplot comparing CPI values across TB (84.2%), Sepsis (82.5%), and Dengue (76.0%). "
+    "No significant difference was observed (Kruskal-Wallis p = 0.16), indicating a conserved epigenetic state. "
+    "n = 10,357 cells (TB), 24,796 cells (Sepsis), 20,000 cells (Dengue)."
+)
+
+doc1.add_paragraph()
+fig2_legend = doc1.add_paragraph()
+fig2_legend.add_run("Figure 2. The Core Epigenetic Signature. ").bold = True
+fig2_legend.add_run(
+    "(a) Venn diagram showing the intersection of primed DEG sets across diseases, identifying 616 shared genes. "
+    "(b) Heatmap of Log2 Fold Change for the top 50 core genes across TB, Sepsis, and Dengue. "
+    "Key genes highlighted: VEGFA (vascular), S100A8/A9 (inflammatory), ISG15/MX1 (antiviral)."
+)
+
+# Extended Data (Optional but enhances Article)
+add_heading(doc1, "Extended Data", 1)
+doc1.add_paragraph("Extended Data Figure 1: UMAP projections of Sepsis (GSE151263) and Dengue (GSE154386) datasets colored by cell type and condition.")
+doc1.add_paragraph("Extended Data Table 1: Complete list of 616 core primed genes with Log2FC values per disease.")
+
 # References
 add_heading(doc1, "References", 1)
 refs = [
@@ -320,7 +353,7 @@ doc4.add_paragraph()
 # Subject
 subj = doc4.add_paragraph()
 subj.add_run("RE: ").bold = True
-subj.add_run("Manuscript Submission - Epigenetic Locking of Vascular and Inflammatory Effectors Defines the Universal Host Response to Severe Infection")
+subj.add_run("Article Submission - Epigenetic Locking of Vascular and Inflammatory Effectors Defines the Universal Host Response to Severe Infection")
 doc4.add_paragraph()
 
 # Salutation
@@ -329,7 +362,7 @@ doc4.add_paragraph()
 
 # Importance Paragraph (Why Nature Immunology)
 doc4.add_paragraph(
-    "We are pleased to submit our original research for consideration in Nature Immunology. "
+    "We are pleased to submit our Article entitled 'Epigenetic Locking of Vascular and Inflammatory Effectors Defines the Universal Host Response to Severe Infection' for consideration in Nature Immunology. "
     "This work addresses a fundamental question in host-pathogen interaction: Why do pathogens as distinct as Mycobacterium tuberculosis, Dengue virus, and polymicrobial sepsis converge on a shared phenotype of vascular shock and immune paralysis?"
 )
 doc4.add_paragraph(
