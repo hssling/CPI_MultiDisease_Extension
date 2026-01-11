@@ -127,12 +127,51 @@ doc1.add_paragraph(
     "Limitations of this study include the reliance on peripheral blood for Sepsis/Dengue; however, our TB data confirms that tissue-resident cells (BAL) show even stronger priming."
 )
 
+# Methods (Required for Nature)
+add_heading(doc1, "Methods", 1)
+add_heading(doc1, "Data Sources", 2)
+doc1.add_paragraph(
+    "Single-cell multiomics data were obtained from the Gene Expression Omnibus (GEO). "
+    "Sepsis: GSE151263 (24,796 PBMCs from ICU patients with bacterial sepsis vs healthy controls). "
+    "Dengue: GSE154386 (20,000 PBMCs from acute dengue patients vs baseline). "
+    "Tuberculosis: GSE167232 (Bronchoalveolar lavage, Pisu et al. 2021) and GSE287288 (PBMC, Gong et al. 2025)."
+)
+
+add_heading(doc1, "Computational Environment", 2)
+doc1.add_paragraph(
+    "All analyses were performed in R (v4.3) using Seurat (v5) for RNA-seq processing and Signac for ATAC-seq integration. "
+    "Harmony was used for batch effect correction. clusterProfiler was used for pathway enrichment."
+)
+
+add_heading(doc1, "Chromatin Priming Index (CPI)", 2)
+doc1.add_paragraph(
+    "The CPI quantifies the fraction of differentially expressed genes (DEGs) with accessible chromatin at their promoter regions (+/- 2kb TSS). "
+    "DEGs were identified using the Wilcoxon rank-sum test (p_adj < 0.05) between disease and control groups. "
+    "Chromatin accessibility was assessed by checking for overlapping ATAC-seq peaks. "
+    "CPI = (Number of Primed DEGs) / (Total Number of DEGs) * 100."
+)
+
+add_heading(doc1, "Statistical Analysis", 2)
+doc1.add_paragraph(
+    "Cross-disease CPI comparisons were performed using the Kruskal-Wallis test. "
+    "Differential expression was evaluated using the Wilcoxon rank-sum test with Benjamini-Hochberg correction for multiple comparisons."
+)
+
+add_heading(doc1, "AI Usage Disclosure", 2)
+doc1.add_paragraph(
+    "Large Language Model (LLM)-assisted tools (Google Gemini) were used for literature synthesis, code generation, and manuscript drafting. "
+    "All factual claims, data values, and scientific interpretations were independently verified by the author. "
+    "The author takes full responsibility for the accuracy of all content."
+)
+
 # Declarations
 add_heading(doc1, "Declarations", 1)
 add_para(doc1, "Funding: No specific funding received.")
 add_para(doc1, "Competing Interests: The authors declare no competing interests.")
 add_para(doc1, "Data Availability: All analysis code and processed data are available at: https://github.com/hssling/CPI_MultiDisease_Extension")
-add_para(doc1, "Acknowledgements: We thank the open source community for tools (Seurat, Signac).")
+add_para(doc1, "Code Availability: Analysis scripts (R, Python) are available at the GitHub repository.")
+add_para(doc1, "Acknowledgements: We thank the open source community for bioinformatics tools (Seurat, Signac, clusterProfiler).")
+add_para(doc1, "Ethics: This study used publicly available, de-identified datasets. No additional ethical approval was required.")
 
 # References
 add_heading(doc1, "References", 1)
@@ -262,5 +301,72 @@ for g in genes:
     doc3.add_paragraph(g)
 
 doc3.save(os.path.join(OUTPUT_DIR, "Supplementary_Material.docx"))
+
+
+# =================================================================================
+# COVER LETTER (Per Nature Immunology Guidelines)
+# =================================================================================
+doc4 = Document()
+
+# Date and Addressee
+from datetime import datetime
+today = datetime.now().strftime("%B %d, %Y")
+doc4.add_paragraph(today)
+doc4.add_paragraph()
+doc4.add_paragraph("Editor-in-Chief")
+doc4.add_paragraph("Nature Immunology")
+doc4.add_paragraph()
+
+# Subject
+subj = doc4.add_paragraph()
+subj.add_run("RE: ").bold = True
+subj.add_run("Manuscript Submission - Epigenetic Locking of Vascular and Inflammatory Effectors Defines the Universal Host Response to Severe Infection")
+doc4.add_paragraph()
+
+# Salutation
+doc4.add_paragraph("Dear Editor,")
+doc4.add_paragraph()
+
+# Importance Paragraph (Why Nature Immunology)
+doc4.add_paragraph(
+    "We are pleased to submit our original research for consideration in Nature Immunology. "
+    "This work addresses a fundamental question in host-pathogen interaction: Why do pathogens as distinct as Mycobacterium tuberculosis, Dengue virus, and polymicrobial sepsis converge on a shared phenotype of vascular shock and immune paralysis?"
+)
+doc4.add_paragraph(
+    "Whereas transcriptomic studies have identified overlapping gene modules, the upstream regulatory mechanism 'locking' the immune system into this state has remained elusive. "
+    "We introduce the Chromatin Priming Index (CPI), a single-cell metric, and demonstrate a conserved 'Epigenetic Alert State' across >60,000 cells from three disease cohorts. "
+    "Our key discovery—that VEGFA is epigenetically primed in circulating immune cells across all diseases—provides a paradigm-shifting mechanism for the vascular leak syndrome. "
+    "We believe this work will be of broad interest to the immunology community and clinicians managing severe infections."
+)
+doc4.add_paragraph()
+
+# Disclosures
+add_heading(doc4, "Disclosures", 1)
+doc4.add_paragraph("• Related Manuscripts: No related manuscripts are under consideration or in press elsewhere.")
+doc4.add_paragraph("• Prior Discussions: No prior discussions have been held with Nature Immunology editors regarding this work.")
+doc4.add_paragraph("• Peer Review Preference: Standard single-blind peer review is acceptable.")
+doc4.add_paragraph()
+
+# Suggested Reviewers (Optional but Recommended)
+add_heading(doc4, "Suggested Reviewers (Optional)", 1)
+doc4.add_paragraph("1. Prof. Mihai G. Netea - Radboud University Medical Center, Netherlands. Expert in Trained Immunity.")
+doc4.add_paragraph("2. Prof. Maziar Divangahi - McGill University, Canada. Expert in TB immunology and macrophage biology.")
+doc4.add_paragraph("3. Prof. Alan Sher - NIAID, NIH, USA. Expert in host-pathogen interactions.")
+doc4.add_paragraph()
+
+# Closing
+doc4.add_paragraph("Thank you for considering our manuscript. We look forward to your response.")
+doc4.add_paragraph()
+doc4.add_paragraph("Sincerely,")
+doc4.add_paragraph()
+doc4.add_paragraph("Dr. Siddalingaiah H S, MD")
+doc4.add_paragraph("Professor, Department of Community Medicine")
+doc4.add_paragraph("Shridevi Institute of Medical Sciences and Research Hospital")
+doc4.add_paragraph("Tumkur, Karnataka, India - 572106")
+doc4.add_paragraph("Email: hssling@yahoo.com")
+doc4.add_paragraph("ORCID: 0000-0002-4771-8285")
+
+doc4.save(os.path.join(OUTPUT_DIR, "Cover_Letter_Nature.docx"))
+
 
 print("Manuscripts generated in Submission_Package/")
