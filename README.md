@@ -1,56 +1,98 @@
-# Epigenetic Locking of Vascular Shock: Multi-Disease Extension
+# Epigenetic Locking of Vascular and Inflammatory Effectors Defines the Universal Host Response to Severe Infection
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.123456.svg)](https://doi.org/10.5281/zenodo.123456)
-[![Reproducibility Check](https://github.com/hssling/CPI_MultiDisease_Extension/actions/workflows/reproducibility.yml/badge.svg)](https://github.com/hssling/CPI_MultiDisease_Extension/actions/workflows/reproducibility.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Reproducibility](https://github.com/hssling/CPI_MultiDisease_Extension/actions/workflows/reproducibility.yml/badge.svg)](https://github.com/hssling/CPI_MultiDisease_Extension/actions/workflows/reproducibility.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Status: Submission Ready](https://img.shields.io/badge/Status-Submission%20Ready-green.svg)]()
 
-## Overview
-This repository contains the analysis code and results for the study: **"Epigenetic Locking of Vascular and Inflammatory Effectors Defines the Universal Host Response to Severe Infection"**.
+## 🧬 Project Overview
+Severe infections—whether bacterial (**Tuberculosis**), viral (**Dengue**), or syndromic (**Sepsis**)—converge on a shared phenotype of systemic inflammation and vascular shock. This project investigates the molecular "memory" driving this response.
 
-We demonstrate that a conserved "epigenetic alert state" exists across **Tuberculosis**, **Sepsis**, and **Dengue**, driven by the chromatin priming of **VEGFA** in circulating immune cells.
+We introduce the **Chromatin Priming Index (CPI)**, a single-cell metric quantifying the epigenetic potential of immune cells. By analyzing >60,000 cells across three distinct pathologies, we reveal a **Universal Epigenetic Alert State** that "locks" immune cells into a pathological response pattern.
 
-## Repository Structure
+---
+
+## 📊 Key Discoveries
+
+### 1. The Universal Alert State (CPI > 80%)
+Across distinct etiologies, the degree of chromatin priming in immune cells is conserved (p=0.16).
+- **Tuberculosis (Chronic):** CPI 84.2%
+- **Sepsis (Acute):** CPI 82.5%
+- **Dengue (Viral):** CPI 76.0%
+
+### 2. The VEGFA Mechanism of Shock
+We identified **Vascular Endothelial Growth Factor A (VEGFA)** as a universally epigenetically primed gene in circulating monocytes. It is transcriptionally upregulated in correlation with disease severity:
+> **Epigenetic Locking:** Immune cells are "loaded" to secrete VEGFA, driving the vascular leak and hypotension characteristic of septic and dengue shock.
+
+---
+
+## 🔬 Methodology Pipeline
+
+```mermaid
+graph TD
+    A[Raw Data: GSE151263, GSE154386] --> B[Seurat v5 Preprocessing]
+    B --> C[Chromatin Accessiblity Mapping]
+    C --> D[Chromatin Priming Index (CPI) Calc]
+    D --> E[Cross-Disease Integration]
+    E --> F{Core Signature}
+    F --> G[Pathway Enrichment]
+    F --> H[VEGFA Mechanism]
 ```
-CPI_MultiDisease_Extension/
-├── 2_analysis/                 # R Analysis Scripts
-│   ├── 01_sepsis_cpi.R         # Sepsis (GSE151263) Pipeline
-│   ├── 02_dengue_cpi.R         # Dengue (GSE154386) Pipeline
-│   ├── 03_cross_disease.R      # Integration & Stats
-│   └── 04_core_signature.R     # Core 616 Gene Identification
-├── 3_results/                  # Output Figures & Tables
-│   ├── core_signature/         # Heatmaps & Gene Lists
-│   └── figures/                # High-Res Figures for Paper
-├── Submission_Package/         # Generated Manuscripts (DOCX)
-├── generate_manuscripts.py     # Python script to build DOCX
-└── environment.yml             # Conda Environment
-```
 
-## Reproducibility
+## 📂 Repository Structure
 
-### 1. Setup Environment
-To replicate the computational environment:
+| Directory | Description |
+|-----------|-------------|
+| `2_analysis/` | **R Scripts:** Sepsis (`01`), Dengue (`02`), and Cross-Disease (`03`) pipelines. |
+| `3_results/` | **Figures & Tables:** High-res heatmaps (`core_signature/`) and statistical tables. |
+| `Submission_Package/` | **Manuscripts:** Final .docx files for *Nature Immunology* and *CID*. |
+| `.github/workflows/` | **CI/CD:** Automated reproducibility checks. |
+
+## 🚀 Reproducibility
+
+This repository is designed for full computational reproducibility.
+
+### Prerequisites
+- Conda
+- Git
+
+### Setup
 ```bash
+# 1. Clone the repository
+git clone https://github.com/hssling/CPI_MultiDisease_Extension.git
+cd CPI_MultiDisease_Extension
+
+# 2. Create Environment
 conda env create -f environment.yml
 conda activate cpi_env
-```
 
-### 2. Run Analysis
-The scripts in `2_analysis/` are numbered sequentially. Note that raw data (GSE files) must be downloaded from GEO and placed in `1_data_raw/` (ignored in repo to save space).
-
-### 3. Generate Manuscripts
-The final manuscripts with embedded figures can be regenerated programmatically:
-```bash
+# 3. Generate Manuscripts (Optional)
 python generate_manuscripts_docx.py
 ```
-This ensures that the text and figures are always perfectly synced with the latest results.
 
-## Key Findings
-- **Universal Priming:** 80-84% of immune response genes are epigenetically primed across pathologies.
-- **VEGFA Mechanism:** We identify VEGFA upregulation (+4.0 LFC in Dengue) as an epigenetically locked trait in PBMCs, explaining the shared vascular shock phenotype.
+## 📜 Citation
 
-## Author & Citation
+If you utilize this code or data, please cite the following:
+
+```bibtex
+@article{Siddalingaiah2026,
+  title = {Epigenetic Locking of Vascular and Inflammatory Effectors Defines the Universal Host Response to Severe Infection},
+  author = {Siddalingaiah, H S},
+  affiliation = {Shridevi Institute of Medical Sciences and Research Hospital},
+  year = {2026},
+  journal = {In Preparation},
+  url = {https://github.com/hssling/CPI_MultiDisease_Extension}
+}
+```
+
+## 👨‍⚕️ Author Information
+
 **Dr. Siddalingaiah H S, MD**  
+Professor, Department of Community Medicine  
 Shridevi Institute of Medical Sciences and Research Hospital  
-Tumkur, India.
+Tumkur, Karnataka, India - 572106  
+📧 Email: hssling@yahoo.com  
+🆔 ORCID: [0000-0002-4771-8285](https://orcid.org/0000-0002-4771-8285)
 
-Please cite: *Siddalingaiah H S. Epigenetic Locking of Vascular and Inflammatory Effectors. 2026.*
+---
+*Built with R ScRNA-seq Suite & Python Automation*
