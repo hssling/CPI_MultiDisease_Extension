@@ -95,7 +95,7 @@ p.add_run(
 p = doc.add_paragraph()
 p.add_run("Results: ").bold = True
 p.add_run(
-    "Alveolar macrophages (AMs) and peripheral monocytes showed profoundly distinct chromatin landscapes. AMs exhibited a 'hyper-primed' inflammatory state (CPI 78.8%) driven by AP-1 (FOS/JUN) and NF-κB motifs, "
+    "Alveolar macrophages (AMs) and peripheral monocytes showed profoundly distinct chromatin landscapes. AMs exhibited a 'hyper-primed' inflammatory state (CPI 77.6%) driven by AP-1 (FOS/JUN) and NF-κB motifs, "
     "whereas peripheral monocytes displayed an Interferon-Response Factor (IRF) signature (CPI 84.2%). "
     "Patients who failed treatment exhibited a specific 'Failure Chromatin Signature' in baseline AMs: increased accessibility at Matrix Metalloproteinase loci (MMP1, MMP9) despite low expression. "
     "Transcription factor motif analysis identified BATF and MAF as master regulators of this pathological state."
@@ -168,7 +168,7 @@ doc.add_paragraph(
 # Table 2: CPI by compartment
 t2_headers = ["Compartment", "Cell Type", "Mean CPI", "Dominant TF Motifs"]
 t2_data = [
-    ["BAL", "Alveolar Macrophage", "78.8%", "FOS, JUN, NFKB1"],
+    ["BAL", "Alveolar Macrophage", "77.6%", "FOS, JUN, NFKB1"],
     ["BAL", "Dendritic Cell", "81.2%", "IRF8, BATF3"],
     ["PBMC", "CD14+ Monocyte", "84.3%", "STAT1, IRF7"],
     ["PBMC", "NK cell", "85.4%", "TBX21, EOMES"],
