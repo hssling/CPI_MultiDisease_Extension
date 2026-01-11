@@ -353,11 +353,41 @@ doc_supp.add_paragraph(
 )
 
 add_heading(doc_supp, "Supplementary Tables", 1)
-doc_supp.add_paragraph("Supplementary Table 1: Complete CPI values for all cell types with source data references.")
-doc_supp.add_paragraph("Supplementary Table 2: Quality control metrics and filtering criteria.")
 
-doc_supp.save(os.path.join(OUTPUT_DIR, "Supplementary_CID_v6_HONEST.docx"))
-print("CID Supplementary v6 generated: Supplementary_CID_v6_HONEST.docx")
+# Supplementary Table 1: Complete CPI data
+add_heading(doc_supp, "Supplementary Table 1: Complete CPI Values", 2)
+st1_headers = ["Cell Type", "CPI", "Disease", "Tissue", "CPI (%)"]
+st1_data = [
+    ["Alveolar Macrophage", "0.776", "TB (BAL)", "BAL", "77.6%"],
+    ["B cell", "0.786", "TB (BAL)", "BAL", "78.6%"],
+    ["Dendritic cell", "0.812", "TB (BAL)", "BAL", "81.2%"],
+    ["Interstitial Macrophage", "0.776", "TB (BAL)", "BAL", "77.6%"],
+    ["Monocyte", "0.791", "TB (BAL)", "BAL", "79.1%"],
+    ["Monocyte", "0.843", "TB (PBMC)", "PBMC", "84.3%"],
+    ["NK cell", "0.854", "TB (PBMC)", "PBMC", "85.4%"],
+    ["T cell", "0.828", "TB (PBMC)", "PBMC", "82.8%"],
+    ["DC", "0.890", "TB (PBMC)", "PBMC", "89.0%"],
+    ["B cell", "0.792", "TB (PBMC)", "PBMC", "79.2%"],
+]
+add_table(doc_supp, st1_headers, st1_data, "Complete Chromatin Priming Index values for all TB cell types. Source: CPI_AllDiseases.csv", "S1")
+
+add_heading(doc_supp, "Supplementary Table 2: Quality Control Parameters", 2)
+st2_headers = ["Parameter", "Threshold", "Rationale"]
+st2_data = [
+    ["RNA genes detected", "200-5000", "Exclude dying cells and potential doublets"],
+    ["Mitochondrial fraction", "<15%", "Exclude dying/stressed cells"],
+    ["ATAC fragments", "1000-50000", "Ensure adequate chromatin coverage"],
+    ["TSS enrichment", ">4", "Verify ATAC-seq quality"],
+    ["Nucleosome signal", "<2", "Confirm nucleosome periodicity"],
+]
+add_table(doc_supp, st2_headers, st2_data, "Quality control thresholds applied during data processing.", "S2")
+
+add_heading(doc_supp, "Supplementary References", 1)
+doc_supp.add_paragraph("1. Pisu D, et al. J Exp Med. 2021;218:e20210615. (GSE167232)")
+doc_supp.add_paragraph("2. Gong Z, et al. GEO Accession GSE287288; 2025.")
+
+doc_supp.save(os.path.join(OUTPUT_DIR, "Supplementary_CID_v7_HONEST.docx"))
+print("CID Supplementary v7 generated: Supplementary_CID_v7_HONEST.docx")
 
 
 # =================================================================================
@@ -380,12 +410,17 @@ doc_cl.add_paragraph()
 
 doc_cl.add_paragraph(
     "We submit our computational methods article introducing the Chromatin Priming Index (CPI), "
-    "a novel metric for quantifying epigenetic readiness in single-cell multiomics data. "
-    "By re-analyzing published TB datasets from GEO, we demonstrate distinct compartment-specific chromatin landscapes and identify MMP accessibility as a hypothesis-generating observation."
+    "a novel quantitative metric for measuring epigenetic readiness in single-cell multiomics data. "
+    "To our knowledge, CPI represents the first standardized formula for quantifying the proportion of disease-associated genes with accessible promoter chromatin."
 )
 doc_cl.add_paragraph(
-    "We emphasize full transparency: this is a secondary analysis of public data, and our MMP priming hypothesis requires prospective validation. "
-    "We believe this computational framework will interest CID readers and stimulate future clinical studies."
+    "By re-analyzing published TB datasets from GEO (GSE167232, GSE287288), we demonstrate distinct compartment-specific chromatin landscapes "
+    "and identify elevated MMP1/MMP9 accessibility in lung macrophages as a hypothesis-generating biomarker candidate. "
+    "We emphasize full transparency: this is a secondary analysis of publicly available data, and our MMP priming hypothesis requires prospective validation in cohorts with treatment outcome data."
+)
+doc_cl.add_paragraph(
+    "We believe this computational framework will interest CID readers working in TB, host-directed therapy, and single-cell epigenomics, "
+    "and will stimulate future clinical validation studies."
 )
 doc_cl.add_paragraph()
 
@@ -402,7 +437,7 @@ doc_cl.add_paragraph("Professor, Department of Community Medicine")
 doc_cl.add_paragraph("Shridevi Institute of Medical Sciences")
 doc_cl.add_paragraph("Email: hssling@yahoo.com")
 
-doc_cl.save(os.path.join(OUTPUT_DIR, "Cover_Letter_CID_v6_HONEST.docx"))
-print("CID Cover Letter v6 generated: Cover_Letter_CID_v6_HONEST.docx")
+doc_cl.save(os.path.join(OUTPUT_DIR, "Cover_Letter_CID_v7_HONEST.docx"))
+print("CID Cover Letter v7 generated: Cover_Letter_CID_v7_HONEST.docx")
 
 print("\n=== CID v6 HONEST SUBMISSION PACKAGE COMPLETE ===")
