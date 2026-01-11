@@ -399,8 +399,8 @@ refs = [
     "8. Berry MP, et al. An interferon-inducible neutrophil-driven blood transcriptional signature in human tuberculosis. Nature. 2010;466:973-977.",
     "9. Li P, et al. BATF-JUN is critical for IRF4-mediated transcription in T cells. Nature. 2012;490:543-546.",
     "10. Divangahi M, et al. Trained immunity, tolerance, priming and differentiation: distinct immunological processes. Nat Immunol. 2021;22:2-6.",
-    "11. Pisu D, et al. Single-cell analysis of human tuberculosis lung reveals immune cell diversity. Cell Host Microbe. 2021;29:1178-1195. (GSE167232)",
-    "12. Gong W, et al. Single-cell multiomics reveals immune signatures in tuberculosis. Nature. 2025;XXX:XXX. (GSE287288)",
+    "11. Pisu D, et al. Single cell analysis of M. tuberculosis phenotype and macrophage lineages in the infected lung. J Exp Med. 2021;218:e20210615. (GSE167232)",
+    "12. [Data Source] Gene Expression Omnibus Accession GSE287288. TB PBMC single-cell multiomics dataset.",
 ]
 for r in refs:
     doc.add_paragraph(r)
