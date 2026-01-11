@@ -375,7 +375,7 @@ doc_cl.add_paragraph("Professor, Department of Community Medicine")
 doc_cl.add_paragraph("Shridevi Institute of Medical Sciences")
 doc_cl.add_paragraph("Tumkur, India | hssling@yahoo.com | ORCID: 0000-0002-4771-8285")
 
-doc_cl.save(os.path.join(OUTPUT_DIR, "Cover_Letter_CID_FINAL.docx"))
-print("CID Cover Letter generated: Cover_Letter_CID_FINAL.docx")
+doc_cl.save(os.path.join(OUTPUT_DIR, "Cover_Letter_CID_v2.docx"))
+print("CID Cover Letter generated: Cover_Letter_CID_v2.docx")
 
 print("\n=== CID SUBMISSION PACKAGE COMPLETE ===")
