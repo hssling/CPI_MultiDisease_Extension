@@ -217,9 +217,9 @@ t3_data = [
 add_table(doc, t3_headers, t3_data, "MMP-related findings and hypotheses generated from this re-analysis.", 3)
 
 # Figure 2
-add_figure(doc, os.path.join(FIG_DIR, "CID_Fig2_MultiPanel.png"), 
+add_figure(doc, os.path.join(FIG_DIR, "CID_Fig2_HONEST.png"), 
            "MMP chromatin accessibility analysis. (A) Gene Ontology enrichment of BAL-enriched accessible regions. "
-           "(B) MMP1/MMP9 accessibility in BAL vs. PBMC. (C) BATF motif enrichment.", 2)
+           "(B) MMP1/MMP9 accessibility in BAL vs. PBMC. (C) Transcription factor motif enrichment.", 2)
 
 add_heading(doc, "Hypothesis Generation: MMP Priming and Treatment Outcomes", 2)
 doc.add_paragraph(
@@ -233,9 +233,9 @@ doc.add_paragraph(
 )
 
 # Figure 3
-add_figure(doc, os.path.join(FIG_DIR, "CID_Fig3_MultiPanel.png"), 
-           "Hypothesis generation framework. (A) Proposed mechanism linking MMP accessibility to outcomes. "
-           "(B) Lung-specific nature of the signature. (C) Suggested validation study design.", 3)
+add_figure(doc, os.path.join(FIG_DIR, "CID_Fig3_HONEST.png"), 
+           "Hypothesis generation framework. (A) Proposed mechanism linking MMP accessibility to outcomes (requires validation). "
+           "(B) Compartment-specific chromatin summary. (C) Proposed validation study design.", 3)
 
 # Discussion
 add_heading(doc, "Discussion", 1)
@@ -329,8 +329,8 @@ refs = [
 for r in refs:
     doc.add_paragraph(r)
 
-doc.save(os.path.join(OUTPUT_DIR, "Manuscript_CID_FINAL_v6_HONEST.docx"))
-print("CID Manuscript v6 (HONEST VERSION) generated: Manuscript_CID_FINAL_v6_HONEST.docx")
+doc.save(os.path.join(OUTPUT_DIR, "Manuscript_CID_FINAL_v7_HONEST.docx"))
+print("CID Manuscript v6 (HONEST VERSION) generated: Manuscript_CID_FINAL_v7_HONEST.docx")
 
 
 # =================================================================================
