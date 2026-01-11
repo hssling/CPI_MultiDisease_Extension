@@ -96,7 +96,7 @@ doc1.add_paragraph(
 )
 doc1.add_paragraph(
     "Results: Mean CPI exceeded 80% across all diseases (TB PBMC: 84.2%, Sepsis: 82.5%, Dengue: 76.1%; p=0.16 Kruskal-Wallis), indicating a conserved 'Epigenetic Alert State'. "
-    "We identified 617 universally primed genes, enriched for interferon response (ISG15, STAT1), inflammation (S100A8/A9), and notably VEGFA—the driver of vascular permeability. "
+    "We identified 616 universally primed genes, enriched for interferon response (ISG15, STAT1), inflammation (S100A8/A9), and notably VEGFA—the driver of vascular permeability. "
     "VEGFA was upregulated in monocytes with Log2FC correlating with vascular severity: TB +1.21, Sepsis +2.31, Dengue +4.02."
 )
 doc1.add_paragraph(
@@ -134,7 +134,7 @@ doc1.add_paragraph(
 )
 doc1.add_paragraph(
     "Our analysis of over 55,000 individual cells reveals a remarkably conserved epigenetic state across disease contexts. "
-    "We identify a core set of 617 'locked' genes and discover that VEGFA—classically attributed to endothelial cells—is epigenetically primed and transcriptionally upregulated in circulating monocytes and macrophages. "
+    "We identify a core set of 616 'locked' genes and discover that VEGFA—classically attributed to endothelial cells—is epigenetically primed and transcriptionally upregulated in circulating monocytes and macrophages. "
     "These findings provide a novel mechanism for the vascular leak syndrome and identify chromatin remodeling as a potential therapeutic target."
 )
 
@@ -183,10 +183,10 @@ add_table(doc1, table1_headers, table1_data, "Chromatin Priming Index (CPI) by C
 add_figure(doc1, os.path.join(FIG_DIR, "Fig1_MultiPanel_FINAL.png"), 
            "Universal Epigenetic Priming. (a) Schematic of CPI concept. (b) Boxplot of CPI across TB, Sepsis, and Dengue showing conserved priming (p=0.16). (c) CPI stratified by cell type.", 1)
 
-add_heading(doc1, "A Core Signature of 617 Universally Primed Genes", 2)
+add_heading(doc1, "A Core Signature of 616 Universally Primed Genes", 2)
 doc1.add_paragraph(
     "To identify genes consistently primed across infections, we intersected the top DEGs (p_adj < 0.05, |Log2FC| > 0.5) with accessible chromatin regions from each disease context. "
-    "This stringent intersection revealed a Core Signature of 617 genes primed in all three conditions (Figure 2a)."
+    "This stringent intersection revealed a Core Signature of 616 genes primed in all three conditions (Figure 2a)."
 )
 doc1.add_paragraph(
     "Gene Ontology enrichment revealed three dominant functional clusters: "
@@ -214,11 +214,11 @@ add_table(doc1, table2_headers, table2_data, "Top 10 Core Primed Genes. Mean Log
 
 # Figure 2 - Multi-panel
 add_figure(doc1, os.path.join(FIG_DIR, "Fig2_MultiPanel_FINAL.png"), 
-           "Core Epigenetic Signature. (a) Venn diagram showing 617 shared genes. (b) Heatmap of Log2FC for top 50 core genes. (c) VEGFA expression by disease.", 2)
+           "Core Epigenetic Signature. (a) Venn diagram showing 616 shared genes. (b) Heatmap of Log2FC for top 50 core genes. (c) VEGFA expression by disease.", 2)
 
 add_heading(doc1, "VEGFA: An Epigenetically Locked Driver of Vascular Pathology", 2)
 doc1.add_paragraph(
-    "Among the 617 core primed genes, Vascular Endothelial Growth Factor A (VEGFA) emerged as a critical finding. "
+    "Among the 616 core primed genes, Vascular Endothelial Growth Factor A (VEGFA) emerged as a critical finding. "
     "VEGFA is the primary mediator of vascular permeability and angiogenesis, with elevated plasma levels consistently associated with severity in both sepsis and dengue hemorrhagic fever [5]. "
     "However, the cellular source of VEGFA in infection has been debated, with most studies assuming endothelial or hypoxic stromal origin."
 )
@@ -248,7 +248,7 @@ doc1.add_paragraph(
     "Several therapeutic strategies emerge from these findings. "
     "First, BET bromodomain inhibitors (e.g., JQ1, I-BET762), which prevent chromatin reader proteins from activating primed loci, have shown anti-inflammatory effects in preclinical sepsis models [6]. Our data provide mechanistic rationale for this approach. "
     "Second, direct anti-VEGFA therapies (bevacizumab) or VEGF receptor antagonists could be repurposed for severe dengue or sepsis with dominant vascular leak. "
-    "Third, the 617-gene Core Signature provides targets for biomarker development; patients with high baseline accessibility at these loci may be at elevated risk for clinical deterioration."
+    "Third, the 616-gene Core Signature provides targets for biomarker development; patients with high baseline accessibility at these loci may be at elevated risk for clinical deterioration."
 )
 doc1.add_paragraph(
     "Our study has limitations. The sepsis and dengue analyses relied on peripheral blood, which may not fully reflect tissue-resident immune dynamics. "
@@ -334,7 +334,7 @@ doc1.add_paragraph()
 fl2 = doc1.add_paragraph()
 fl2.add_run("Figure 2. Core Epigenetic Signature and VEGFA Priming. ").bold = True
 fl2.add_run(
-    "(a) Venn diagram showing 617 genes primed in all three diseases. "
+    "(a) Venn diagram showing 616 genes primed in all three diseases. "
     "(b) Heatmap of Log2FC for top 50 core genes; functional clusters: Interferon (purple), Inflammatory (orange), Vascular (red). "
     "(c) VEGFA Log2FC in CD14+ monocytes: TB +1.21, Sepsis +2.31, Dengue +4.02, correlating with vascular severity."
 )
