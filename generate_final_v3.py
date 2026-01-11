@@ -179,8 +179,8 @@ table1_data = [
 ]
 add_table(doc1, table1_headers, table1_data, "Chromatin Priming Index (CPI) by Cell Type Across Diseases. Values represent percentage of DEGs with accessible chromatin.", 1)
 
-# Figure 1
-add_figure(doc1, os.path.join(FIG_DIR, "Fig1_MultiDisease_CPI_Comparison.png"), 
+# Figure 1 - Multi-panel
+add_figure(doc1, os.path.join(FIG_DIR, "Fig1_MultiPanel_FINAL.png"), 
            "Universal Epigenetic Priming. (a) Schematic of CPI concept. (b) Boxplot of CPI across TB, Sepsis, and Dengue showing conserved priming (p=0.16). (c) CPI stratified by cell type.", 1)
 
 add_heading(doc1, "A Core Signature of 617 Universally Primed Genes", 2)
@@ -212,7 +212,8 @@ table2_data = [
 ]
 add_table(doc1, table2_headers, table2_data, "Top 10 Core Primed Genes. Mean Log2FC across all three diseases.", 2)
 
-add_figure(doc1, os.path.join(CORE_DIR, "Fig_Core_Signature_Heatmap.png"), 
+# Figure 2 - Multi-panel
+add_figure(doc1, os.path.join(FIG_DIR, "Fig2_MultiPanel_FINAL.png"), 
            "Core Epigenetic Signature. (a) Venn diagram showing 617 shared genes. (b) Heatmap of Log2FC for top 50 core genes. (c) VEGFA expression by disease.", 2)
 
 add_heading(doc1, "VEGFA: An Epigenetically Locked Driver of Vascular Pathology", 2)
