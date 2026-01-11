@@ -401,8 +401,8 @@ refs = [
 for r in refs:
     doc.add_paragraph(r)
 
-doc.save(os.path.join(OUTPUT_DIR, "Manuscript_CID_FINAL_v3.docx"))
-print("CID Manuscript v2 (Enhanced) generated: Manuscript_CID_FINAL_v3.docx")
+doc.save(os.path.join(OUTPUT_DIR, "Manuscript_CID_FINAL_v4.docx"))
+print("CID Manuscript v2 (Enhanced) generated: Manuscript_CID_FINAL_v4.docx")
 
 
 # =================================================================================
