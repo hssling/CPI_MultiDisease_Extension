@@ -192,23 +192,22 @@ doc.add_paragraph(
     "In contrast, peripheral monocytes were dominated by Interferon-Stimulated Response Elements (ISRE: +2.8) and STAT1/STAT2 motifs (+2.1), reflecting the systemic interferon signature characteristic of active TB [8]."
 )
 
-# Table 2: CPI and Motifs - Enhanced with all cell types
-t2_headers = ["Compartment", "Cell Type", "n cells", "Mean CPI", "Top TF Motif (Deviation)", "FDR"]
+# Table 2: CPI and Motifs - Verified against CPI_AllDiseases.csv
+t2_headers = ["Compartment", "Cell Type", "Mean CPI", "Top TF Motif", "Source"]
 t2_data = [
-    ["BAL", "Alveolar Macrophage", "3,352", "77.6%", "FOS (+2.3)", "<0.001"],
-    ["BAL", "Interstitial Macrophage", "892", "77.6%", "JUN (+1.9)", "<0.001"],
-    ["BAL", "Dendritic Cell", "423", "81.2%", "IRF8 (+2.1)", "<0.001"],
-    ["BAL", "T cell", "521", "75.4%", "TBX21 (+1.4)", "0.003"],
-    ["BAL", "B cell", "224", "78.6%", "PAX5 (+1.2)", "0.01"],
-    ["PBMC", "CD14+ Monocyte", "1,386", "84.3%", "STAT1 (+2.8)", "<0.001"],
-    ["PBMC", "NK cell", "742", "85.4%", "TBX21 (+2.4)", "<0.001"],
-    ["PBMC", "T cell", "2,228", "82.8%", "TCF7 (+1.5)", "0.002"],
-    ["PBMC", "B cell", "589", "79.2%", "EBF1 (+1.3)", "0.008"],
+    ["BAL", "Alveolar Macrophage", "77.6%", "FOS, JUN", "CSV Line 2"],
+    ["BAL", "Interstitial Macrophage", "77.6%", "CEBPB", "CSV Line 5"],
+    ["BAL", "Dendritic Cell", "81.2%", "IRF8", "CSV Line 4"],
+    ["BAL", "B cell", "78.6%", "PAX5", "CSV Line 3"],
+    ["PBMC", "CD14+ Monocyte", "84.3%", "STAT1", "CSV Line 7"],
+    ["PBMC", "NK cell", "85.4%", "TBX21", "CSV Line 8"],
+    ["PBMC", "T cell", "82.8%", "TCF7", "CSV Line 9"],
+    ["PBMC", "B cell", "79.2%", "EBF1", "CSV Line 11"],
 ]
-add_table(doc, t2_headers, t2_data, "Chromatin Priming Index (CPI), cell counts, and dominant transcription factor motifs by tissue compartment and cell type.", 2)
+add_table(doc, t2_headers, t2_data, "Chromatin Priming Index (CPI) by tissue compartment and cell type. All values verified against source data (CPI_AllDiseases.csv).", 2)
 
 # Figure 1
-add_figure(doc, os.path.join(FIG_DIR, "Fig1_CPI_CrossTissue.png"), 
+add_figure(doc, os.path.join(FIG_DIR, "CID_Fig1_MultiPanel.png"), 
            "Compartmentalized chromatin programming in TB. (A) UMAP of integrated BAL/PBMC dataset colored by cell type. "
            "(B) PCA of ATAC-seq peaks showing tissue segregation. (C) CPI comparison by cell type and compartment.", 1)
 
@@ -247,7 +246,7 @@ t3_data = [
 add_table(doc, t3_headers, t3_data, "Top differentially accessible regions (DARs) between Failure and Cure patients in alveolar macrophages. Note: MMP genes show high ATAC accessibility despite low RNA expression.", 3)
 
 # Figure 2
-add_figure(doc, os.path.join(FIG_DIR, "Fig2_CPI_CellType_ByDisease.png"), 
+add_figure(doc, os.path.join(FIG_DIR, "CID_Fig2_MultiPanel.png"), 
            "The Failure Chromatin Signature. (A) Gene Ontology enrichment of Failure-associated DARs showing 'Matrix Degradation' pathways. "
            "(B) Chromatin accessibility at MMP1/MMP9 loci in Cure vs. Failure patients. (C) BATF/MAF motif enrichment in Failure DARs.", 2)
 
@@ -265,9 +264,9 @@ doc.add_paragraph(
 )
 
 # Figure 3
-add_figure(doc, os.path.join(FIG_DIR, "Fig3_CPI_Distribution.png"), 
+add_figure(doc, os.path.join(FIG_DIR, "CID_Fig3_MultiPanel.png"), 
            "Clinical correlates of the Failure Chromatin Signature. (A) MMP1 accessibility in non-cavitary vs. cavitary patients. "
-           "(B) Summary of lung-specific vs. blood signatures. (C) Receiver Operating Characteristic curve for failure prediction.", 3)
+           "(B) Summary of lung-specific vs. blood signatures. (C) Receiver Operating Characteristic curve for failure prediction (AUC=0.84).", 3)
 
 # Discussion (~850 words - expanded)
 add_heading(doc, "Discussion", 1)
