@@ -352,8 +352,8 @@ refs = [
 for r in refs:
     doc1.add_paragraph(r)
 
-doc1.save(os.path.join(OUTPUT_DIR, "Manuscript_Nature_Article_FINAL_v4.docx"))
-print("FINAL Manuscript v4 generated: Manuscript_Nature_Article_FINAL_v4.docx")
+doc1.save(os.path.join(OUTPUT_DIR, "Manuscript_Nature_Article_FINAL_v5.docx"))
+print("FINAL Manuscript v5 generated: Manuscript_Nature_Article_FINAL_v5.docx")
 
 
 # =================================================================================
