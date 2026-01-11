@@ -193,7 +193,7 @@ doc1.add_paragraph(
     "(1) Type I Interferon Response (GO:0034340; ISG15, MX1, STAT1, OAS1, IFI35, IFITM3); "
     "(2) Neutrophil Degranulation (GO:0043312; S100A8, S100A9, S100A12, LYZ, CTSD); "
     "(3) MHC Class II Antigen Presentation (GO:0019886; HLA-DRA, HLA-DRB5, HLA-DPA1). "
-    "The top 20 core primed genes are shown in Table 2."
+    "The top 10 core primed genes are shown in Table 2."
 )
 
 # Table 2: Core Signature Genes
@@ -213,7 +213,7 @@ table2_data = [
 add_table(doc1, table2_headers, table2_data, "Top 10 Core Primed Genes. Mean Log2FC across all three diseases.", 2)
 
 add_figure(doc1, os.path.join(CORE_DIR, "Fig_Core_Signature_Heatmap.png"), 
-           "Core Epigenetic Signature. (a) Venn diagram showing 617 shared genes. (b) Heatmap of Log2FC for top 50 core genes.", 2)
+           "Core Epigenetic Signature. (a) Venn diagram showing 617 shared genes. (b) Heatmap of Log2FC for top 50 core genes. (c) VEGFA expression by disease.", 2)
 
 add_heading(doc1, "VEGFA: An Epigenetically Locked Driver of Vascular Pathology", 2)
 doc1.add_paragraph(
