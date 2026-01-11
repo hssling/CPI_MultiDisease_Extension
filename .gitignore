@@ -1,0 +1,30 @@
+# Large Data Folders
+1_data_raw/
+config/
+v2_extracted/
+tmp/
+
+# Large File Types
+*.tar
+*.gz
+*.zip
+*.rds
+*.Robj
+*.h5
+*.arrow
+*.loom
+
+# System
+.DS_Store
+Thumbs.db
+.ipynb_checkpoints/
+
+# R/Python
+.Rproj.user
+.Rhistory
+.RData
+__pycache__/
+*.pyc
+
+# Exclude large figures if necessary (but we want them for paper)
+# 3_results/figures/*.png should be fine (<5MB)

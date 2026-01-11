@@ -1,0 +1,22 @@
+cell_type,CPI,disease,tissue,disease_category,CPI_percent
+Alveolar Macrophage,0.776290006531679,TB (BAL),BAL,TB,77.6
+B cell,0.785566298342542,TB (BAL),BAL,TB,78.6
+Dendritic cell,0.812472837896567,TB (BAL),BAL,TB,81.2
+Interstitial Macrophage,0.775729131746564,TB (BAL),BAL,TB,77.6
+Monocyte,0.790572148254768,TB (BAL),BAL,TB,79.1
+Monocyte,0.843442362654811,TB (PBMC),PBMC,TB,84.3
+NK cell,0.854349951124145,TB (PBMC),PBMC,TB,85.4
+T cell,0.828379334748762,TB (PBMC),PBMC,TB,82.8
+DC,0.889867841409692,TB (PBMC),PBMC,TB,89
+B cell,0.791956018518519,TB (PBMC),PBMC,TB,79.2
+B cell,0.8714,Sepsis,PBMC,Sepsis,87.1
+DC,0.75,Sepsis,PBMC,Sepsis,75
+Monocyte,0.8197,Sepsis,PBMC,Sepsis,82
+NK cell,0.8828,Sepsis,PBMC,Sepsis,88.3
+Platelet,0.7571,Sepsis,PBMC,Sepsis,75.7
+T cell,0.8673,Sepsis,PBMC,Sepsis,86.7
+B cell,0.8291,Dengue,PBMC,Dengue,82.9
+NK cell,0.8352,Dengue,PBMC,Dengue,83.5
+Monocyte,0.8313,Dengue,PBMC,Dengue,83.1
+T cell,0.8167,Dengue,PBMC,Dengue,81.7
+Platelet,0.4906,Dengue,PBMC,Dengue,49.1

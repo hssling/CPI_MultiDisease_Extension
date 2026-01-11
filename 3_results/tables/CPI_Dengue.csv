@@ -1,0 +1,6 @@
+cell_type,n_deg,n_deg_with_link,CPI,disease,dataset
+B_cell,1141,946,0.8291,Dengue,GSE154386
+NK_cell,352,294,0.8352,Dengue,GSE154386
+Monocyte,581,483,0.8313,Dengue,GSE154386
+T_cell,693,566,0.8167,Dengue,GSE154386
+Platelet,53,26,0.4906,Dengue,GSE154386
