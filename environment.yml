@@ -1,0 +1,13 @@
+name: cpi_env
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.9
+  - python-docx
+  - r-base=4.3
+  - r-seurat
+  - r-signac
+  - r-tidyverse
+  - r-data.table
