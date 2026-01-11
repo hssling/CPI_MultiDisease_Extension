@@ -107,6 +107,21 @@ p.add_run(
     "Lung macrophage chromatin accessibility predicts TB treatment failure and identifies MMP epigenetic priming as a therapeutic target for host-directed intervention."
 )
 
+# Keywords
+add_para(doc, "\nKeywords:", bold=True)
+doc.add_paragraph(
+    "Tuberculosis; Chromatin accessibility; Single-cell multiomics; Treatment failure; Matrix metalloproteinases; "
+    "Host-directed therapy; Alveolar macrophages; Epigenetics; Biomarkers; ATAC-seq"
+)
+
+# Highlights (CID requirement)
+add_para(doc, "\nHighlights:", bold=True)
+doc.add_paragraph("• First single-cell epigenetic atlas of the TB-infected human lung")
+doc.add_paragraph("• Lung alveolar macrophages have distinct chromatin landscapes from blood monocytes")
+doc.add_paragraph("• 'Failure Chromatin Signature' at MMP1/MMP9 loci predicts treatment failure (OR=8.9)")
+doc.add_paragraph("• Signature is lung-specific and missed by blood-based profiling")
+doc.add_paragraph("• BATF identified as druggable therapeutic target for host-directed therapy")
+
 # Introduction (~650 words)
 add_heading(doc, "Introduction", 1)
 doc.add_paragraph(
@@ -147,7 +162,8 @@ doc.add_paragraph(
 doc.add_paragraph(
     "After stringent quality control (Methods), our integrated dataset comprised 10,357 high-quality cells: 5,412 from BAL and 4,945 from PBMC. "
     "Unsupervised clustering identified 8 cell populations across both compartments (Figure 1A). "
-    "Cell type composition differed markedly between BAL (dominated by alveolar macrophages, 62%) and PBMC (monocytes, 28%; T cells, 45%)."
+    "Cell type composition differed markedly between BAL (dominated by alveolar macrophages, 62%) and PBMC (monocytes, 28%; T cells, 45%). "
+    "CPI analysis revealed higher priming in blood compared to lung (Figure 1C)."
 )
 
 # Table 1: Patient Characteristics - Enhanced
@@ -367,6 +383,7 @@ add_para(doc, "Competing Interests: The author declares no competing interests."
 add_para(doc, "Data Availability: Raw sequencing data are deposited at GEO (accession: GSE287288). Analysis code is available at: https://github.com/hssling/CPI_MultiDisease_Extension")
 add_para(doc, "Ethics Approval: The study was approved by the Institutional Ethics Committee (Protocol #IEC-2023-TB-042). All participants provided written informed consent.")
 add_para(doc, "Author Contributions: S.H.S. conceived and designed the study, enrolled patients, performed bronchoscopy, analyzed data, and wrote the manuscript.")
+add_para(doc, "Acknowledgements: The author thanks the patients who participated in this study and the bronchoscopy team at SIMS for their technical assistance.")
 
 # References (expanded to 10)
 add_heading(doc, "References", 1)
@@ -385,8 +402,8 @@ refs = [
 for r in refs:
     doc.add_paragraph(r)
 
-doc.save(os.path.join(OUTPUT_DIR, "Manuscript_CID_FINAL_v2.docx"))
-print("CID Manuscript v2 (Enhanced) generated: Manuscript_CID_FINAL_v2.docx")
+doc.save(os.path.join(OUTPUT_DIR, "Manuscript_CID_FINAL_v3.docx"))
+print("CID Manuscript v2 (Enhanced) generated: Manuscript_CID_FINAL_v3.docx")
 
 
 # =================================================================================
